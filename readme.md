@@ -1,0 +1,1 @@
+# JavaScript training for beginners
