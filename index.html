@@ -3,10 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .title {
+            color: yellow;
+            border: 1px solid green;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 100px;
+            text-align: center;
+            font-size: 50px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-    Hello world!
+<div id="hello" class="title">Hellow world!</div>
+<script>
+    var elem = document.getElementsByClassName('title');
+    var onClick = function(e) {
+        var text = e.target.innerText;
+
+        console.log(text.split(' ')[1] );
+        var textArr = text.split(' ');
+        textArr[1] = 'Marcin!';
+        e.target.innerText = textArr.join(' ')
+    };
+    elem[0].addEventListener('click', onClick)
+</script>
 
 </body>
 </html>
