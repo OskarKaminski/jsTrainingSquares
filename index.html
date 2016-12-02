@@ -14,11 +14,16 @@
 </style>
 
 <div id="hello" class="title">Hello world!</div>
+<div class="title">Nice, huh?!</div>
 
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
 <script>
-    var elem = document.getElementsByClassName('title');
 
-    var onClick = function(e){
+    function onClick(e){
         var text = e.target.innerText;
 
         var textArr = text.split(' ');
@@ -26,6 +31,6 @@
         e.target.innerText = textArr.join(' ');
     };
 
-    elem[0].addEventListener('click', onClick);
-    elem[1].addEventListener('click', onClick);
+    var elem = $('.title').click(onClick);
+
 </script>
