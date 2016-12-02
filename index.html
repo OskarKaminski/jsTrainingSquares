@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <title>Title</title>
 <style>
-    .title{
-        color: blue;
-        border: 1px solid red;
-        padding: 20px;
-        border-radius: 20px;
-        margin-top: 100px;
-        text-align: center;
-        font-size: 50px;
-        cursor: pointer;
+    .container {
+        max-width: 60%;
+        margin: auto;
+        height: 100vh;
+    }
+    .square {
+        outline: 1px solid;
+        width: 50%;
+        height: 30%;
+        float: left;
     }
 </style>
 
-<div id="hello" class="title">Hello world!</div>
-<div class="title">Nice, huh?!</div>
+<div class="container">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
+
 
 
 <script
@@ -22,14 +28,6 @@
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
 <script>
-    function onClick(e){
-        var text = e.target.innerText;
 
-        var textArr = text.split(' ');
-        textArr[1] = 'Oskar';
-        e.target.innerText = textArr.join(' ');
-    }
-
-    $('.title').click(onClick);
 
 </script>
