@@ -23,7 +23,9 @@
 
         var textArr = text.split(' ');
         textArr[1] = 'Sebastian';
-        e.tartet.innerText = textArr.join(' ';)
+        e.target.innerText = textArr.join(' ');
     };
-    console.log(elem);
+
+    elem[0].addEventListener('click', onClick);
+    elem[1].addEventListener('click', onClick);
 </script>
