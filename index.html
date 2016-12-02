@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<title>Title</title>
+<style>
+    .title{
+        color: blue;
+        border: 1px solid red;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 100px;
+        text-align: center;
+        font-size: 50px;
+        cursor: pointer;
+    }
+</style>
 
-    Hello world!
+<div id="hello" class="title">Hello world!</div>
+<div class="title">Nice, huh?!</div>
 
-</body>
-</html>
+<script>
+    var elem = document.getElementsByClassName('title');
+
+    var onClick = function(e){
+        var text = e.target.innerText;
+
+        var textArr = text.split(' ');
+        textArr[1] = 'Oskar';
+        e.target.innerText = textArr.join(' ');
+    };
+
+    elem[0].addEventListener('click', onClick);
+    elem[1].addEventListener('click', onClick);
+
+</script>
