@@ -16,18 +16,20 @@
 <div id="hello" class="title">Hello world!</div>
 <div class="title">Nice, huh?!</div>
 
-<script>
-    var elem = document.getElementsByClassName('title');
 
-    var onClick = function(e){
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+<script>
+    function onClick(e){
         var text = e.target.innerText;
 
         var textArr = text.split(' ');
         textArr[1] = 'Oskar';
         e.target.innerText = textArr.join(' ');
-    };
+    }
 
-    elem[0].addEventListener('click', onClick);
-    elem[1].addEventListener('click', onClick);
+    $('.title').click(onClick);
 
 </script>
