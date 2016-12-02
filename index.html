@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 
+<script
+        src="http://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
 <title>Title</title>
 <style>
     .title {
@@ -16,7 +21,10 @@
 <div class="title">Goodbye world!</div>
 
 <script>
-    var elem = document.getElementsByClassName('title');
+    // var elem = document.getElementsByClassName('title');
+    // a z JQuery:
+    var elem = $('.title'); // kropka oznacza że szukamy po klasie; # by było po id; A bez niczego - to element, np. <div>
+
     // var table = [8, 2, 9, "hey"];
 
     var onClick = function(e) {
@@ -27,11 +35,26 @@
         e.target.innerText = words[0].concat(' Michał!'); // widzisz to?
     };
 
-    elem[0].addEventListener('click', onClick);
-    elem[1].addEventListener('click', onClick);
+    //elem[0].addEventListener('click', onClick);
+    //elem[1].addEventListener('click', onClick);
+    // A z JQuery:
+    $elem[0].click(onClick);
+
+    // hoisting w JS - trudne słowo
+
 
     // Siema to ja Sebstian
 
+</script>
+// Całkiem nowy kod na JQuery (zakomentować stary powyżej!)
+
+<script>
+    function onClick(e){
+            var text = e.target.innerText;
+            var textArr[1] = 'Oskar1';
+            e.target.innerText = textArr.join(' ');
+    }
+    $('.title').click(onClick); // inne eventy: hover, mouseover, itp.
 </script>
 
 </html>
