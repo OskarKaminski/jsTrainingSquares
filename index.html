@@ -1,12 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-    Hello world!
+<title>Title</title>
+<style>
+    .title {
+        text-align: center;
+        color: teal;
+        border: dotted darkmagenta 2px;
+        font-size: 30px;
+        cursor: pointer
+    }
+</style>
 
-</body>
+
+<div class="title">Hello world!</div>
+<div class="title">Goodbye world!</div>
+
+<script>
+    var elem = document.getElementsByClassName('title');
+    // var table = [8, 2, 9, "hey"];
+
+    var onClick = function(e) {
+        var text = e.target.innerText;
+        // console.log(text);
+        var words = text.split(' ', 2)
+        console.log(words[1]);
+        e.target.innerText = words[0].concat(' Michał!');
+    };
+
+    elem[0].addEventListener('click', onClick);
+    elem[1].addEventListener('click', onClick);
+
+</script>
+
 </html>
