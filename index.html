@@ -19,17 +19,31 @@
 <body>
 
 <div id="hello" class="title">Hellow world!</div>
+
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+
+
 <script>
-    var elem = document.getElementsByClassName('title');
-    var onClick = function(e) {
+   // var elem = document.getElementsByClassName('title');
+   // var elem = $('.title');
+function onClick(e) {
+    
+}
+   // var onClick = function(e) {
+
         var text = e.target.innerText;
 
-        console.log(text.split(' ')[1] );
+       // console.log(text.split(' ')[1] );
         var textArr = text.split(' ');
         textArr[1] = 'Marcin!';
         e.target.innerText = textArr.join(' ')
     };
-    elem[0].addEventListener('click', onClick)
+
+   $('.title').click(onClick)
+   // elem[0].addEventListener('click', onClick)
 </script>
 
 </body>
