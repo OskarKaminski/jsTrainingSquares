@@ -14,11 +14,42 @@
         font-size: 30px;
         cursor: pointer
     }
+    div.row {
+        width: 100%;
+        border-width: 1px;
+        border-style: dotted;
+        border-color: gray;
+        text-align: center;
+    }
+    div.inline {
+        display: inline-block;
+        width: 20%;
+        height: 35vh;
+        border-width: 2px;
+        border-style: solid;
+        border-color: teal;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        color: teal;
+        font-family: Tahoma;
+        font-size: 20px;
+        font-style: italic;
+        vertical-align: middle;
+    }
+    div.floater {
+        float: left;
+        height: 50%;
+        width: 100%;
+        margin-bottom: -10px;
+    }
+
 </style>
 
 
-<div class="title">Hello world!</div>
-<div class="title">Goodbye world!</div>
+<!--<div class="title">Hello world!</div>
+<div class="title">Goodbye world!</div>-->
 
 <script>
     // var elem = document.getElementsByClassName('title');
@@ -46,9 +77,10 @@
     // Siema to ja Sebstian
 
 </script>
-// Całkiem nowy kod na JQuery (zakomentować stary powyżej!)
 
 <script>
+    // Całkiem nowy kod na JQuery (zakomentować stary powyżej!)
+
     function onClick(e){
             var text = e.target.innerText;
             var textArr[1] = 'Oskar1';
@@ -56,5 +88,28 @@
     }
     $('.title').click(onClick); // inne eventy: hover, mouseover, itp.
 </script>
+
+    <div class="row">
+        <div class="inline">
+            <div class="floater"></div>
+            <div>1</div>
+        </div>
+        <div class="inline">
+            <div class="floater"></div>
+            <div>2</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="inline">
+            <div class="floater"></div>
+            <div>3</div>
+        </div>
+        <div class="inline">
+            <div class="floater"></div>
+            <div>4</div>
+        </div>
+    </div>
+
+
 
 </html>
