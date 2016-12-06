@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+    color: teal;
+    border: dotted darkmagenta 2px;
+    font-size: 30px;
+    cursor: pointer
+}
+div.row {
+    width: 100%;
+    border-width: 1px;
+    border-style: dotted;
+    border-color: gray;
+    text-align: center;
+}}

@@ -1,115 +1,36 @@
 <!DOCTYPE html>
 
-<script
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style_squares.css" />
+
+    <div class="row">
+        <div class="inline">
+            <div class="floater"></div>
+            <!-- łatwiej dobrać się do danych niż do id-ków -->
+            <div id = "sq1" data-number="1">1</div>
+        </div>
+        <div class="inline">
+            <div class="floater"></div>
+            <div id = "sq2" data-number="2">2</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="inline">
+            <div class="floater"></div>
+            <div id = "sq3" data-number="3">3</div>
+        </div>
+        <div class="inline">
+            <div class="floater"></div>
+            <div id = "sq4" data-number="4">4</div>
+        </div>
+    </div>
+
+    <script
         src="http://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-
-<title>Title</title>
-<style>
-    .title {
-        text-align: center;
-        color: teal;
-        border: dotted darkmagenta 2px;
-        font-size: 30px;
-        cursor: pointer
-    }
-    div.row {
-        width: 100%;
-        border-width: 1px;
-        border-style: dotted;
-        border-color: gray;
-        text-align: center;
-    }
-    div.inline {
-        display: inline-block;
-        width: 20%;
-        height: 35vh;
-        border-width: 2px;
-        border-style: solid;
-        border-color: teal;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 20px;
-        margin-bottom: 0px;
-        color: teal;
-        font-family: Tahoma;
-        font-size: 20px;
-        font-style: italic;
-        vertical-align: middle;
-    }
-    div.floater {
-        float: left;
-        height: 50%;
-        width: 100%;
-        margin-bottom: -10px;
-    }
-
-</style>
-
-
-<!--<div class="title">Hello world!</div>
-<div class="title">Goodbye world!</div>-->
-
-<script>
-    // var elem = document.getElementsByClassName('title');
-    // a z JQuery:
-    var elem = $('.title'); // kropka oznacza że szukamy po klasie; # by było po id; A bez niczego - to element, np. <div>
-
-    // var table = [8, 2, 9, "hey"];
-
-    var onClick = function(e) {
-        var text = e.target.innerText;
-        // console.log(text);
-        var words = text.split(' ', 2)
-        console.log(words[1]);
-        e.target.innerText = words[0].concat(' Michał!'); // widzisz to?
-    };
-
-    //elem[0].addEventListener('click', onClick);
-    //elem[1].addEventListener('click', onClick);
-    // A z JQuery:
-    $elem[0].click(onClick);
-
-    // hoisting w JS - trudne słowo
-
-
-    // Siema to ja Sebstian
-
-</script>
-
-<script>
-    // Całkiem nowy kod na JQuery (zakomentować stary powyżej!)
-
-    function onClick(e){
-            var text = e.target.innerText;
-            var textArr[1] = 'Oskar1';
-            e.target.innerText = textArr.join(' ');
-    }
-    $('.title').click(onClick); // inne eventy: hover, mouseover, itp.
-</script>
-
-    <div class="row">
-        <div class="inline">
-            <div class="floater"></div>
-            <div>1</div>
-        </div>
-        <div class="inline">
-            <div class="floater"></div>
-            <div>2</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="inline">
-            <div class="floater"></div>
-            <div>3</div>
-        </div>
-        <div class="inline">
-            <div class="floater"></div>
-            <div>4</div>
-        </div>
-    </div>
-
-
+    <script src="./script_squares.js"></script>
 
 </html>
