@@ -1,36 +1,21 @@
 <!DOCTYPE html>
 <title>Title</title>
-<style>
-    .title {
-        color: blue;
-        border: 1px solid red;
-        padding: 20px;
-        border-radius: 20px;
-        margin-top: 100px;
-        text-align: center;
-        font-size: 50px;
-        cursor: pointer;
-    }
-</style>
 
-<div id="hello" class="title">Hello world!</div>
-<div class="title">Nice, huh?!</div>
+<link rel="stylesheet" href="./style.css" />
+<link rel="stylesheet" href="./square.css" />
+
+<div class="container">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+</div>
+
 
 
 <script
         src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-<script>
 
-    function onClick(e){
-        var text = e.target.innerText;
-
-        var textArr = text.split(' ');
-        textArr[1] = 'Sebastian';
-        e.target.innerText = textArr.join(' ');
-    };
-
-    var elem = $('.title').click(onClick);
-
-</script>
+<script src="./square.js"></script>
