@@ -17,11 +17,17 @@ function hilightSquares(arrayNumbers, i) {
      if(i < arrayNumbers.length) {
          hilightSingleSquare(arrayNumbers[i]);
          setTimeout(function() {
-             hideHilight(arrayNumbers[i]);
-             i++;
-             hilightSquares(arrayNumbers, i);
+            hideHilight(arrayNumbers[i]);
+            i++;
+            setTimeout(function(){
+                hilightSquares(arrayNumbers, i);
+            }, 500);
          }, 1000);
      }
+     else {
+        alert("Now is your turn to show the right order");
+        canClick = true;
+    }
  }
 
  function hilightSingleSquare(n) {
@@ -36,11 +42,46 @@ function hilightSquares(arrayNumbers, i) {
      });
  }
 
- var randomNumbers = getRandomNumbers(5);
-hilightSquares(randomNumbers, 0);
+ function getSquareNumber(square) {
+     return square.data().number;
+ }
 
-console.log(randomNumbers);
+ function isWinner(clickCount, clickedNu) {
 
-$('.square').click(function(e){
-    console.log(e);
+ }
+
+var randomCount = 1;
+var clickCount;
+var randomNumbers;
+var canClick;
+
+function initGame() {
+    canClick = false;
+    clickCount = 0;
+    randomNumbers = getRandomNumbers(randomCount);
+    hilightSquares(randomNumbers, 0);
+    console.log(randomNumbers);
+}
+
+initGame();
+
+$('.square').click(function() {
+    if(!canClick) return;
+
+    var clickedSquareNumber = getSquareNumber($(this));
+    clickCount++;
+    var arrayIndex = clickCount - 1;
+    
+    if(clickedSquareNumber === randomNumbers[arrayIndex]) {
+        if(clickCount == randomNumbers.length) {
+            alert("You've won");
+            randomCount++;
+            initGame();
+        }
+    }
+    else {
+        alert("You've LOST");
+        randomCount = 1;
+        initGame();
+    }
 });
