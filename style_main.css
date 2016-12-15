@@ -11,4 +11,11 @@ div.row {
     border-style: dotted;
     border-color: gray;
     text-align: center;
-}}
+}
+
+div.container {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: deeppink;
+    width: 50%;
+}
