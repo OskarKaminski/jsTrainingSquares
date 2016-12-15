@@ -1,23 +1,12 @@
-.title {
-    text-align: center;
-    color: teal;
-    border: dotted darkmagenta 2px;
-    font-size: 30px;
-    cursor: pointer
-}
-div.row {
-    width: 100%;
-    border-width: 1px;
-    border-style: dotted;
-    border-color: gray;
-    text-align: center;
-}
-
 div.container {
     border-style: dotted;
-    border-width: 1px;
+    border-width: 0px;
     border-color: deeppink;
-    max-width: 420px;
-    height: 90vh;
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-botom: 0;
+    max-width: 423.4px;
+    height: 95vh;
     margin: auto;
 }
