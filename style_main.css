@@ -17,5 +17,7 @@ div.container {
     border-style: dotted;
     border-width: 1px;
     border-color: deeppink;
-    width: 50%;
+    max-width: 420px;
+    height: 90vh;
+    margin: auto;
 }
