@@ -1,21 +1,21 @@
-function highlightSquares(array) {
-    for(var i = 0; i<array.length; i++){
-        (function(number) {
+function highlightSquares(array, callback) {
+    for (var i = 0; i < array.length; i++) {
+        (function (number) {
 
-            setTimeout(function(){
+            setTimeout(function () {
                 highlightSquare(number);
-                setTimeout(hideHighlight, 1000);
             }, i * 1500);
 
         })(array[i])
-
     }
+    setTimeout(callback, array.length * 1500);
 }
 
-function highlightSquare(number) {
+function highlightSquare(number, time, color, withoutHide) {
     $('#square' + number).css({
-        'background-color': 'yellow'
+        'background-color': color || 'yellow'
     });
+    withoutHide === undefined && setTimeout(hideHighlight, time || 1000);
 }
 
 function hideHighlight() {

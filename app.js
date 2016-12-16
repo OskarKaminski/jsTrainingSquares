@@ -1,8 +1,32 @@
-var randomSquares = getRandomNumbers(4);
+var clickIndex;
+var randomSquares;
 
-highlightSquares([1, 1, 3, 4]);
+function startGame(){
+    $('#result').text('');
+    clickIndex = 0;
+    randomSquares = getRandomNumbers(4);
+    highlightSquares(randomSquares, yourTurn);
+}
 
+function yourTurn(){
+    $('.square').on('mousedown', function (e) {
+        var clickedNumber = e.currentTarget.dataset.number;
+        highlightSquare(clickedNumber, 200, 'red', true);
 
-$('.square').click(function (whateva) {
-    var number = whateva.console.log(e);
-});
+        $(this).on('mouseup', hideHighlight);
+
+        if(clickedNumber != randomSquares[clickIndex]){
+            return endGame('lost');
+        } else if(randomSquares.length-1 === clickIndex) {
+            return endGame('won')
+        }
+
+        clickIndex++;
+    });
+}
+
+function endGame(result) {
+    $('#result').text('You ' + result);
+}
+
+$('#start').click(startGame);
